@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giao dịch thành công</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen px-4 py-6 text-white flex flex-col items-center">
+
+  <!-- Logo -->
+  <h1 class="text-xl font-bold mb-6">VCB Digibank</h1>
+
+  <!-- Biểu tượng thành công -->
+  <div class="bg-gradient-to-br from-green-400 to-lime-300 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+    </svg>
+  </div>
+
+  <h2 class="text-lg font-semibold mb-1">Giao dịch thành công!</h2>
+  <div id="sotien" class="text-3xl font-bold text-lime-300 mb-2">--</div>
+  <div class="opacity-70 mb-6" id="time">--</div>
+
+  <!-- Chi tiết giao dịch -->
+  <div class="w-full bg-[#1d2d3a] rounded-xl p-4 text-sm shadow-md space-y-3">
+    <div class="flex justify-between"><span>Tài khoản nhận</span><span id="stk" class="font-semibold">--</span></div>
+    <div class="flex justify-between"><span>Tên người nhận</span><span class="font-semibold">LAM THI CUC</span></div>
+    <div class="flex justify-between"><span>Ngân hàng nhận</span><span class="font-semibold">TPBANK</span></div>
+    <div class="flex justify-between"><span>Nội dung</span><span id="noidung" class="font-medium text-right">--</span></div>
+    <div class="flex justify-between"><span>Phân loại</span><span id="phanloai" class="font-semibold">--</span></div>
+    <div class="flex justify-between"><span>Phí chuyển tiền</span><span class="font-semibold">Miễn phí</span></div>
+    <div class="flex justify-between"><span>Hình thức chuyển</span><span class="font-semibold">Chuyển tiền nhanh</span></div>
+    <div class="flex justify-between"><span>Mã giao dịch</span><span class="font-semibold">10140024240</span></div>
+  </div>
+
+  <!-- Lưu mẫu -->
+  <div class="mt-6 text-sm flex justify-between items-center w-full max-w-md">
+    <span>Lưu mẫu chuyển tiền</span>
+    <label class="inline-flex items-center cursor-pointer">
+      <input type="checkbox" class="sr-only peer">
+      <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:bg-lime-400 relative after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+    </label>
+  </div>
+
+  <script>
+    document.getElementById("stk").innerText = localStorage.getItem("stk") || "--";
+    document.getElementById("sotien").innerHTML = (localStorage.getItem("sotien") || "--") + " <span class='text-base'>VND</span>";
+    document.getElementById("noidung").innerText = localStorage.getItem("noidung") || "--";
+    document.getElementById("phanloai").innerText = localStorage.getItem("phanloai") || "--";
+
+    // Hiển thị ngày giờ
+    const now = new Date();
+    const options = { weekday: 'short', hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' };
+    document.getElementById("time").innerText = now.toLocaleString('vi-VN', options);
+  </script>
+
+</body>
+</html>
