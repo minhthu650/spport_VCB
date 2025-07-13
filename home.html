@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCB Digibank - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('78595e07-fc53-4810-84da-0d4a89c4ac8b.png');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <div class="p-4 pt-6 bg-black bg-opacity-60 rounded-b-3xl">
+    <div class="flex justify-end gap-4 mb-3 text-sm">
+      <span>🔔 <span class="text-red-400 text-xs">9+</span></span>
+      <span>🔍</span>
+      <img src="anh/qr_v.png" class="w-5 h-5" alt="QR" />
+    </div>
+
+    <div class="bg-[#0e1320] bg-opacity-90 p-4 rounded-xl border border-lime-400">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="bg-lime-300 text-black text-sm font-bold px-2 py-1 rounded">NGUYEN MINH THU</div>
+      </div>
+      <div class="text-sm space-y-1">
+        <p>Số tài khoản <span class="font-bold">1045128924</span> 📋</p>
+        <p>Số dư *********** 👁️</p>
+      </div>
+      <div class="mt-2 flex justify-between text-xs underline">
+        <a href="#">🕒 Lịch sử giao dịch</a>
+        <a href="#">💳 Tài khoản & Thẻ</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chức năng ưa thích -->
+  <div class="bg-[#0b0f1a] px-4 pt-6 pb-8 rounded-t-3xl">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-base font-semibold">Chức năng ưa thích</h3>
+      <span class="text-lime-400 text-sm">Tuỳ chỉnh ⚙️</span>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 text-center text-sm text-white">
+      <div>
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">💝</div>
+        <p class="mt-1">Chuyển tiền từ thiện</p>
+      </div>
+      <div onclick="location.href='chuyentien.html'" class="cursor-pointer">
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">🔁</div>
+        <p class="mt-1">Chuyển tiền trong nước</p>
+      </div>
+      <div>
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">👥</div>
+        <p class="mt-1">Quản lý nhóm</p>
+      </div>
+      <div>
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">🐷</div>
+        <p class="mt-1">Mở tiết kiệm</p>
+      </div>
+      <div>
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">⚙️</div>
+        <p class="mt-1">Cài đặt hạn mức</p>
+      </div>
+      <div>
+        <div class="bg-[#1c1c1e] w-12 h-12 mx-auto rounded-full flex justify-center items-center text-lg">📞</div>
+        <p class="mt-1">Nạp điện thoại</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="bg-[#101010] text-center py-3 grid grid-cols-3 text-sm text-lime-300 border-t border-gray-700">
+    <div>📄<br />Sản phẩm</div>
+    <div>
+      <img src="anh/qr_v.png" alt="QR" class="w-6 h-6 mx-auto mb-1" />
+      Quét
+    </div>
+    <div>⚙️<br />Cài đặt</div>
+  </div>
+
+</body>
+</html>

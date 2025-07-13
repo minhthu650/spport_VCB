@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chuyển tiền trong nước</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen px-4 pt-6 pb-10 text-white">
+
+  <!-- Tiêu đề có liên kết về home.html -->
+  <a href="home.html" class="text-xl font-semibold mb-4 block hover:underline">← Chuyển tiền trong nước</a>
+
+  <!-- Tài khoản nguồn -->
+  <div class="bg-[#1d2d3a] rounded-xl p-4 mb-6 shadow-md">
+    <div class="text-sm opacity-70 mb-1">Tài khoản nguồn</div>
+    <div class="flex justify-between items-center">
+      <span class="bg-lime-300 text-black px-2 py-1 rounded font-bold text-sm">1045128924</span>
+      <span class="text-2xl font-bold">121,675 <span class="text-sm">VND</span></span>
+    </div>
+  </div>
+
+  <!-- Thông tin người nhận -->
+  <div class="mb-6">
+    <h3 class="font-semibold mb-3 text-base">Thông tin người nhận</h3>
+
+    <label class="text-sm opacity-80">Ngân hàng nhận</label>
+    <select class="w-full p-3 mt-1 mb-4 rounded-lg bg-[#1a2a35] text-white placeholder-gray-400">
+      <option>Chọn ngân hàng nhận</option>
+      <option>Vietcombank</option>
+      <option>Techcombank</option>
+    </select>
+
+    <label class="text-sm opacity-80">Tài khoản/thẻ nhận</label>
+    <input type="text" placeholder="Nhập số tài khoản hoặc số thẻ"
+           class="w-full p-3 mt-1 rounded-lg bg-[#1a2a35] text-white placeholder-gray-400 mb-4" />
+  </div>
+
+  <!-- Thông tin giao dịch -->
+  <div class="mb-6">
+    <h3 class="font-semibold mb-3 text-base">Thông tin giao dịch</h3>
+
+    <label class="text-sm opacity-80">Số tiền</label>
+    <div class="flex items-center gap-2 mt-1 mb-4">
+      <input type="number" placeholder="Nhập số tiền"
+             class="flex-1 p-3 rounded-lg bg-[#1a2a35] text-white placeholder-gray-400" />
+      <span class="text-white">VND</span>
+    </div>
+
+    <label class="text-sm opacity-80">Nội dung</label>
+    <input type="text" value="NGUYEN MINH THU chuyen tien"
+           class="w-full p-3 mt-1 mb-4 rounded-lg bg-[#1a2a35] text-white placeholder-gray-400" />
+
+    <label class="text-sm opacity-80">Phân loại giao dịch</label>
+    <select class="w-full p-3 mt-1 rounded-lg bg-[#1a2a35] text-white placeholder-gray-400">
+      <option>Chọn giao dịch theo mục đích</option>
+      <option>Thanh toán</option>
+      <option>Gửi tặng</option>
+    </select>
+  </div>
+
+  <!-- Nút Tiếp tục -->
+  <div class="mt-6">
+    <button class="w-full py-3 rounded-full bg-gradient-to-r from-lime-300 to-green-400 text-black font-semibold text-lg shadow-md hover:opacity-90 transition">
+      Tiếp tục
+    </button>
+  </div>
+
+</body>
+</html>

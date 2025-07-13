@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VCB Digibank - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://vcbdigibank.vietcombank.com.vn/images/login-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="bg-white bg-opacity-90 rounded-xl shadow-xl p-6 w-full max-w-xs">
+    <h1 class="text-xl font-bold text-center text-green-700">
+      <span class="text-green-600">VCB</span><span class="text-gray-800"> Digibank</span>
+    </h1>
+    <p class="text-center text-gray-600 text-sm mb-6">Kính chào Quý khách</p>
+
+    <form onsubmit="return validateLogin(event)">
+      <label class="block text-sm text-gray-700">Tên đăng nhập</label>
+      <input type="text" id="username" placeholder="Nhập tên đăng nhập" class="w-full border-b border-gray-300 focus:outline-none focus:border-green-500 py-1 mb-4">
+
+      <label class="block text-sm text-gray-700">Mật khẩu</label>
+      <div class="relative">
+        <input type="password" id="password" placeholder="Nhập mật khẩu" class="w-full border-b border-gray-300 focus:outline-none focus:border-green-500 py-1 mb-4">
+        <span class="absolute right-2 top-1 text-gray-400">👁️</span>
+      </div>
+
+      <label class="block text-sm text-gray-700 mb-1">Mã kiểm tra</label>
+      <div class="flex items-center border-b border-gray-300 focus-within:border-green-500 py-1 mb-4">
+        <input type="text" placeholder="Nhập mã" class="flex-1 outline-none px-2 bg-transparent" />
+        <span id="captcha-text" class="bg-white text-green-600 font-semibold text-sm px-3 py-1 border border-gray-300 rounded ml-2 shadow">
+          81343
+        </span>
+        <button type="button" onclick="changeCaptcha()" class="text-blue-600 text-lg ml-1">🔄</button>
+      </div>
+
+      <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-full font-semibold">Đăng nhập</button>
+    </form>
+
+    <div class="text-center mt-4">
+      <a href="#" class="text-blue-500 text-sm">Quên mật khẩu?</a>
+    </div>
+  </div>
+
+  <script>
+    const captchaValues = ["81343", "66757", "72951", "38296", "90472"];
+
+    function changeCaptcha() {
+      const captcha = document.getElementById('captcha-text');
+      const index = Math.floor(Math.random() * captchaValues.length);
+      captcha.textContent = captchaValues[index];
+    }
+
+    function validateLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (username === 'minhthu' && password === '1010') {
+        window.location.href = 'home.html';
+      } else {
+        alert('Tên đăng nhập hoặc mật khẩu không đúng.');
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
